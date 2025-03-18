@@ -1,11 +1,4 @@
-/* Estilos gerais */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-    text-align: center;
-}
-
-/* Estilo do container */
+/* Estilo do container principal */
 #contador-container {
     width: 300px;
     margin: 50px auto;
@@ -16,7 +9,22 @@ body {
     background-color: #f4f4f4;
 }
 
-/* Estilo dos botões */
+/* Estilo dos contadores individuais */
+.contador-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+/* Estilo das imagens */
+.icone {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+/* Botões */
 button {
     margin: 5px;
     padding: 8px 12px;
@@ -31,19 +39,16 @@ button:hover {
     opacity: 0.8;
 }
 
-/* Botão de incremento */
 button.increment {
     background-color: #28a745;
     color: white;
 }
 
-/* Botão de decremento */
 button.decrement {
     background-color: #dc3545;
     color: white;
 }
 
-/* Botão reset */
 button.reset {
     margin-top: 15px;
     padding: 10px 20px;
@@ -52,14 +57,7 @@ button.reset {
     color: white;
 }
 
-/* Estilo do contador */
-.contador {
-    font-size: 20px;
-    font-weight: bold;
-    margin: 10px;
-}
-
-/* Estilo do total */
+/* Estilo do contador total */
 #total {
     font-size: 24px;
     font-weight: bold;
