@@ -1,19 +1,22 @@
-// Seleciona a div principal
 const app = document.getElementById("app");
 
-// Criar container principal
 const container = document.createElement("div");
 container.id = "contador-container";
 app.appendChild(container);
 
-// Criar título
 const titulo = document.createElement("h2");
 titulo.innerText = "Contador de Pessoas";
 container.appendChild(titulo);
 
-// Função para criar contador individual
-function criarContador(tipo) {
+function criarContador(tipo, imgSrc) {
     const section = document.createElement("div");
+    section.classList.add("contador-box");
+
+    const img = document.createElement("img");
+    img.src = imgSrc;
+    img.alt = tipo;
+    img.classList.add("icone");
+    section.appendChild(img);
 
     const label = document.createElement("h3");
     label.innerText = tipo;
@@ -50,11 +53,9 @@ function criarContador(tipo) {
     return display;
 }
 
-// Criar contadores de homens e mulheres
-let homens = criarContador("Homens");
-let mulheres = criarContador("Mulheres");
+let homens = criarContador("Homens", "homem.png");
+let mulheres = criarContador("Mulheres", "mulher.png");
 
-// Criar contador total
 const totalContainer = document.createElement("div");
 const totalLabel = document.createElement("h3");
 totalLabel.innerText = "Total:";
@@ -66,12 +67,10 @@ totalDisplay.id = "total";
 totalContainer.appendChild(totalDisplay);
 container.appendChild(totalContainer);
 
-// Atualizar contador total
 function atualizarTotal() {
     totalDisplay.innerText = parseInt(homens.innerText) + parseInt(mulheres.innerText);
 }
 
-// Criar botão de reset
 const btnReset = document.createElement("button");
 btnReset.innerText = "Resetar";
 btnReset.classList.add("reset");
